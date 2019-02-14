@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HostChecker</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/tablesort.js"></script>
+</head>
+<body>
+	<h1>HostChecker</h1>
+	<h5>Generated at {{timefmt .DateNow "02-01-2006 15:04:39.00"}}</h5>
+	<table id="hosts">
+		<tr>
+			<th class="noselect">Host</th>
+			<th class="noselect">Status</th>
+			<th class="noselect">Latency</th>
+			<th class="noselect">Updated</th>
+			<th class="noselect">Added</th>
+		</tr>
+		{{range .Hosts}}
+		<tr>
+			<td>
+				<a href="{{.Hostname | printf "http://%s/"}}">
+					{{.Hostname}}</a>
+			</td>
+			<td class="{{.Type | lower}}">{{.Type}}</td>
+			<td>{{.Latency | printf "%.2f"}}</td>
+			<td>
+			{{if not (isnulltime .Updated)}}
+			{{timefmt .Updated "02-01-2006 15:04:39.00"}}
+			{{end}}
+			</td>
+			<td>
+			{{if not (isnulltime .Added)}}
+			{{timefmt .Added "02-01-2006 15:04:39.00"}}
+			{{end}}
+			</td>
+		</tr>
+		{{end}}
+</body>
+</html>

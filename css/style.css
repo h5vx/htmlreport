@@ -1,0 +1,67 @@
+body {
+	background: #EAEADD;
+	font-family: 'Consolas', monospace;
+	font-size: 1.1em;
+	margin-left: 5%;
+}
+
+a {
+	color: #333;
+}
+
+a:visited {
+	color: lightgray;
+}
+
+h1, h5 {
+	margin-block-start: 0.1em;
+	margin-block-end: 0.3em;
+}
+
+h5 {
+	color: gray;
+}
+
+table#hosts {
+	border: 2px solid black;
+	min-width: 600px;
+	border-spacing: 0px;
+}
+
+th {
+	border: 0px;
+	border-bottom: 2px solid black;
+	cursor: pointer;
+}
+
+td {
+	border: 0px;
+	border-left: 1px solid gray;
+	padding-left: 0.5em;
+}
+
+td.up, td.down, td.error {
+	text-align: center;
+}
+
+td.up {
+	background: lightgreen;
+}
+
+td.down {
+	background: #FAA;
+}
+
+td.error {
+	background: #F66;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
